@@ -1,5 +1,4 @@
-### **Date created**:
-This project is created on Sep. 10th, 2023.
+**Date created**: This project is created on Sep. 10th, 2023.
 
 # Bikeshare Data Analysis Project
 
@@ -27,3 +26,4 @@ Before running the code, make sure you have the following dependencies installed
 * Python 3.11
 * Pandas: Install pandas using `pip install pandas`
 * NumPy: Install NumPy using `pip install numpy`
+
