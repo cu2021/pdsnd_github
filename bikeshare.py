@@ -59,8 +59,18 @@ Type (none) for no time filter.\n').strip().lower()
 
 
 def get_month():
-    """ get user input for month (all, january, february, ... , june)"""
+    """
+    Get user input for the month and validate it.
 
+    Args:
+        None
+
+    Returns:
+        str: The user-inputted and validated month.
+
+    Example:
+        month = get_month()
+    """
     month = input('(If they chose month) Which month \
 - January, February, March, April, May, or June?\n').strip().lower()
     months = set(MONTHS_IN_VALS)
@@ -73,8 +83,18 @@ February, March, April, May, or June?\n').strip().lower()
 
 
 def get_day():
-    """ get user input for day of week (all, monday, tuesday, ... sunday)"""
+    """
+    Get user input for the day of the week and validate it.
 
+    Args:
+        None
+
+    Returns:
+        str: The user-inputted and validated day of the week.
+
+    Example:
+        day = get_day()
+    """
     day = input('(If they chose day) Which day - \
 Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday?\n').strip().lower()
     days = set(DAYS_IN_VALS)
@@ -124,8 +144,24 @@ def load_data(city, month, day):
 
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
+    """
+    Displays statistics on the most frequent times of travel.
 
+    Args:
+        df (pandas.DataFrame): The DataFrame containing time-related data.
+
+    Returns:
+        None
+
+    Prints:
+        - Most popular month for traveling
+        - Most popular day of the week for traveling
+        - Most popular hour of the day to start traveling
+        - Time taken to calculate the statistics
+
+    Example:
+        time_stats(time_data)
+    """
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
@@ -144,8 +180,24 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """
+    Displays statistics on the most popular stations and trips.
 
+    Args:
+        df (pandas.DataFrame): The DataFrame containing station data.
+
+    Returns:
+        None
+
+    Prints:
+        - Most commonly used start station
+        - Most commonly used end station
+        - Most frequent combination of start station and end station trip
+        - Time taken to calculate the statistics
+
+    Example:
+        station_stats(station_data)
+    """
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
@@ -167,8 +219,23 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
+    """
+    Displays statistics on the total and average trip duration.
 
+    Args:
+        df (pandas.DataFrame): The DataFrame containing trip duration data.
+
+    Returns:
+        None
+
+    Prints:
+        - Total travel time
+        - Mean travel time
+        - Time taken to calculate the statistics
+
+    Example:
+        trip_duration_stats(trip_data)
+    """
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
@@ -186,8 +253,24 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    """
+    Displays statistics on bikeshare users.
 
+    Args:
+        df (pandas.DataFrame): The DataFrame containing bikeshare data.
+
+    Returns:
+        None
+
+    Prints:
+        - Counts of user types
+        - Counts of gender (if available)
+        - Earliest, most recent, and most common year of birth (if available)
+        - Time taken to calculate the statistics
+
+    Example:
+        user_stats(bikeshare_data)
+    """
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
@@ -238,7 +321,6 @@ def read_csv_in_rows(filename):
     Example:
         read_csv_in_rows('data.csv')
     """
-
     with open(filename, 'r') as file:
         reader = csv.DictReader(file)
         rows = []
@@ -279,7 +361,6 @@ def print_rows(rows):
         It iterates over the provided rows and prints each row using the 'print' function.
 
     """
-
     for row in rows:
         print(row)
 
@@ -294,7 +375,6 @@ def get_most_common_season(city):
     Returns:
         str: The most common season for traveling in the specified city.
     """
-
     start_time = time.time()
     df = load_data(city, 'all', 'all')
     most_common_month = df['month'].mode()[0]
@@ -326,7 +406,6 @@ def convert_seconds(seconds):
     Returns:
         str: The formatted string representing the converted time.
     """
-
     days = seconds // (24 * 60 * 60)
     remaining_seconds = seconds % (24 * 60 * 60)
     hours = remaining_seconds // (60 * 60)
