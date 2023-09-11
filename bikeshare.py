@@ -219,7 +219,8 @@ def user_stats(df):
     else:
         print('No Birth Year data to show!')
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    execution_time =(time.time() - start_time)
+    print(f"\nThis took {execution_time} seconds.")
     print('-' * 40)
 
 
