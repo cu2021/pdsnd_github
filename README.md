@@ -22,6 +22,8 @@ This project was completed as part of the **Programming for Data Science Nanodeg
 * [Pandas Documentation](https://pandas.pydata.org/docs/)
 * [NumPy Documentation](https://numpy.org/install/)
 
-
-
-
+### Prerequisites
+Before running the code, make sure you have the following dependencies installed:
+* Python 3.11
+* Pandas: Install pandas using `pip install pandas`
+* NumPy: Install NumPy using `pip install numpy`
