@@ -175,7 +175,8 @@ def time_stats(df):
     df['hour'] = df['Start Time'].dt.hour
     print('what is the most popular hour of the day to start travelling?\n', df['hour'].mode()[0])
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    execution_time =(time.time() - start_time)
+    print(f"\nThis took {execution_time} seconds.")
     print('-' * 40)
 
 
@@ -214,7 +215,8 @@ def station_stats(df):
     m_start_to_end_station = df['start_to_end_station'].mode()[0]
     print('The most frequent combination of start station and end station trip:\nFrom ', m_start_to_end_station)
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    execution_time =(time.time() - start_time)
+    print(f"\nThis took {execution_time} seconds.")
     print('-' * 40)
 
 
@@ -248,7 +250,8 @@ def trip_duration_stats(df):
     mean_travel_time = np.mean(df['Trip Duration'])
     print('The mean travel time: ', convert_seconds(int(mean_travel_time)))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    execution_time =(time.time() - start_time)
+    print(f"\nThis took {execution_time} seconds.")
     print('-' * 40)
 
 
@@ -298,7 +301,8 @@ def user_stats(df):
     else:
         print('No Birth Year data to show!')
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    execution_time =(time.time() - start_time)
+    print(f"\nThis took {execution_time} seconds.")
     print('-' * 40)
 
 
