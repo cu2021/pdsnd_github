@@ -162,7 +162,8 @@ def station_stats(df):
     m_start_to_end_station = df['start_to_end_station'].mode()[0]
     print('The most frequent combination of start station and end station trip:\nFrom ', m_start_to_end_station)
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    execution_time =(time.time() - start_time)
+    print(f"\nThis took {execution_time} seconds.")
     print('-' * 40)
 
 
