@@ -139,7 +139,8 @@ def time_stats(df):
     df['hour'] = df['Start Time'].dt.hour
     print('what is the most popular hour of the day to start travelling?\n', df['hour'].mode()[0])
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    execution_time =(time.time() - start_time)
+    print(f"\nThis took {execution_time} seconds.")
     print('-' * 40)
 
 
